@@ -2,24 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>WEB SERVIE UPDATE TWEET</title>
+<title>WEB SERVICE UPDATE TWEET</title>
 <script src="js/jquery.js"></script>
 </head>
 <body background="">
 <br><br><br><br>
-<table width=70% border=1  align="center" bgcolor="softblue">
+<table width=40% border=1  align="center" bgcolor="softblue">
 
-<tr><td rowspan=2 align="center"><img src="" width="50" align="center" height="50" ><font size=5 font face="calibri" it font color=#ffffff align="top">  Welcome On Twitter<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-4">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="page-header">
-						<h2>Update Status Anda</h2>
-					</div>
-				</div>	
-			</div>
-			<form role="form" method="post" action="index.php">
+<td align="center"><img src="img/tw.jpg" width="50" align="center" height="50" ><font size=5 font face="calibri" it font color=#ffffff align="top">  Welcome On Twitter<div class="container-fluid">
+	<h2>Update Status Anda</h2>
+			<form role="form" method="post" action="index1.php">
 				<div class="row-fluid">
 					<div class="col-sm-6">
 						<div class="form-group">
@@ -29,17 +21,15 @@
 							<div class="col-sm-offset-10 col-sm-3">
 							<br>
 								<button name="update" type="submit" class="btn btn-primary"><font size=5 font face="Capture" it font color=#000000>Tweet</button>
+								<P>
+								</p>
 							</div>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-</div></td>
-
-<td align="center"><h2><font size=5 font face="Capture" it font color=#ffffff >TWEET</h2></tr>
-<td>
+							<div class="col-sm-offset-10 col-sm-3">
+							</div>
+<tr>
+							<td align="center"><h2><font size=5 font face="Capture" it font color=#ffffff >Recen Twitt Update</h2></td>
+							</tr>
+							<td><center>
 <?php
 include "OAuth.php";
 include "twitteroauth.php";
@@ -53,14 +43,23 @@ $status		= $_POST['tweet'];
 $tweet = new TwitterOAuth($consumerKey, $consumerSecret, $oAuthToken, $oAuthSecret);
 if (isset($_POST['update'])){
 	$tweet->post('statuses/update', array('status'=>$status));
-	echo "<h3><font size=5 font face=Capture it font color=#ffffff></h3>";
+	echo "<h3><font size=3 font face=Capture it font color=#ffffff></h3>";
 	include "showTweet.php";
 } else {
 	echo "Pesan gagal terkirim ke Twitter API";
 }
 ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 </td>
-</tr>
+
+</td>
 </table>
 </body>
 </html>
