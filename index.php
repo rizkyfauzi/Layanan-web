@@ -3,9 +3,9 @@
 <head><p> <center> <h1> Silahkan Anda Log In</h1> </center> </p> </head>
 
 <br>
-<table width=20% border=1 align="center" bgcolor="" =>
+<table width=20% border= align="center" bgcolor="softblue" =>
   <tr>
-    <th colspan=2> Log In</th>
+    <th colspan=2> <font size=5 font face="calibri" it font color=#ffffff valign="top"> Twitter Log In</th>
   </tr>
   <tr>
     <td>Username</td>
