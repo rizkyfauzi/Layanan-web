@@ -7,9 +7,9 @@
 </head>
 <body background="">
 <br><br><br><br>
-<table width=70% border=1 align="center" background="" =>
+<table width=70% border=1  align="center" bgcolor="softblue">
 
-<tr><td rowspan=2 valign="top"><img src="" width="70" height="80"><font size=5 font face="Capture" it font color=#ffffff valign="top"><div class="container-fluid">
+<tr><td rowspan=2 align="center"><img src="" width="50" align="center" height="50" ><font size=5 font face="calibri" it font color=#ffffff align="top">  Welcome On Twitter<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-4">
 			<div class="row">
