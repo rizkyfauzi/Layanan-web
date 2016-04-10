@@ -5,13 +5,13 @@
 <title>WEB SERVICE UPDATE TWEET</title>
 <script src="js/jquery.js"></script>
 </head>
-<body background="">
+<body background="img/2.gif">
 <br><br><br><br>
 <table width=40% border=1  align="center" bgcolor="softblue">
 
 <td align="center"><img src="img/tw.jpg" width="50" align="center" height="50" ><font size=5 font face="calibri" it font color=#ffffff align="top">  Welcome On Twitter<div class="container-fluid">
 	<h2>Update Status Anda</h2>
-			<form role="form" method="post" action="index1.php">
+			<form role="form" method="post" action="index.php">
 				<div class="row-fluid">
 					<div class="col-sm-6">
 						<div class="form-group">
