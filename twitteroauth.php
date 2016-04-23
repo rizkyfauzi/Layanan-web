@@ -82,3 +82,50 @@ class TwitterOAuth {
       $this->token = NULL;
     }
   }
+ /**
+   * Get a request_token from Twitter
+   *
+   * @returns a key/value array containing oauth_token and oauth_token_secret
+   */
+  function getRequestToken($oauth_callback) {
+    $parameters = array();
+    $parameters['oauth_callback'] = $oauth_callback; 
+    $request = $this->oAuthRequest($this->requestTokenURL(), 'GET', $parameters);
+    $token = OAuthUtil::parse_parameters($request);
+    $this->token = new OAuthConsumer($token['oauth_token'], $token['oauth_token_secret']);
+    return $token;
+  }
+
+  /**
+   * Get the authorize URL
+   *
+   * @returns a string
+   */
+  function getAuthorizeURL($token, $sign_in_with_twitter = TRUE) {
+    if (is_array($token)) {
+      $token = $token['oauth_token'];
+    }
+    if (empty($sign_in_with_twitter)) {
+      return $this->authorizeURL() . "?oauth_token={$token}";
+    } else {
+       return $this->authenticateURL() . "?oauth_token={$token}";
+    }
+  }
+
+  /**
+   * Exchange request token and secret for an access token and
+   * secret, to sign API calls.
+   *
+   * @returns array("oauth_token" => "the-access-token",
+   *                "oauth_token_secret" => "the-access-secret",
+   *                "user_id" => "9436992",
+   *                "screen_name" => "abraham")
+   */
+  function getAccessToken($oauth_verifier) {
+    $parameters = array();
+    $parameters['oauth_verifier'] = $oauth_verifier;
+    $request = $this->oAuthRequest($this->accessTokenURL(), 'GET', $parameters);
+    $token = OAuthUtil::parse_parameters($request);
+    $this->token = new OAuthConsumer($token['oauth_token'], $token['oauth_token_secret']);
+    return $token;
+  }
